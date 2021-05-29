@@ -1,0 +1,8 @@
+{
+    "name": "rose",
+    "version": "0.2.5",
+    "author": "seiko#4110",
+    "license": "The Unlicense",
+    "theme": "rose.theme.css",
+    "description": "simple-ish rose theme for dark mode, contains snippets from doggybootsy"
+}

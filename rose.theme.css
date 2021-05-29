@@ -1,0 +1,177 @@
+/**
+ * @name rose
+ * @author seiko
+ * @version 0.2.5
+ * @description simple-ish rose theme for dark mode, contains snippets from doggybootsy
+ * @source https://github.com/ztgasdf/rose-theme
+ * @authorId 364295643784806410
+*/
+
+/* MAIN THEME VARIABLES */
+.theme-dark {
+  --header-primary: #e9ffe9;              /* Server&channel title, unread pill, unstyled text */
+  --background-primary: #1C0608;          /* Main chat background. */
+  --background-secondary: #27070A;        /* todo */
+  --background-secondary-alt: #27070A;    /* todo */
+  --background-tertiary: #3C0E12;         /* todo */
+  --background-accent:#2F0A0D;            /* todo */
+  --background-floating: #1C0608;         /* todo */
+  --text-muted: #4D8530;                  /* todo */
+  --channeltextarea-background: #1C0608;  /* todo */
+  --scrollbar-thin-thumb: #2c902b;        /* Scrollbar head */
+  --scrollbar-auto-thumb: #2c902b;        /* Scrollbar head */
+  --scrollbar-auto-track: #31141a;        /* Scrollbar tail */
+  --interactive-hover: #dc5497;           /* self-explanatory, for buttons like memberlist, inbox, etc */
+  --interactive-active: #cef9d7;          /* self-explanatory, for ^^ when active */
+  --background-mobile-primary: #1C0608;   /* todo */
+}
+/* todo */
+.peopleColumn-29fq28 { background-color: var(--background-secondary) }
+
+/* Discord rebrand colours */
+[data-popout-root].newBrand, html.newBrand {
+  --brand-experiment: #014810;         /* Bootleg blurple */
+  --brand-experiment-560: #dc5497;     /* Context menu hover colour */
+}
+
+/* Remove chatbox roundedness, redundant? */
+.scrollableContainer-2NUZem { border-radius: 0px }
+
+/* Make reply dialog same as background */
+.container-2fRDfG { background-color: var(--background-primary) }
+
+/* Added offset for FriendNotifications plugin */
+.platform-win .toasts-tApoHv { 
+  padding-top: 58px;
+  padding-right: 8px;
+}
+
+/* Hide scroll in user popout, text may clip */
+.nameTag-m8r81H .discriminator-19kRMP, .nameTag-m8r81H .username-2b1r56 {overflow: hidden}
+
+/* Compact search, by DoggyBootsy https://github.com/discordsnippets/snippets/tree/main/compacted%20searchbar */
+/* slightly modified, 0.6s to 0.2s, width to 200px */
+.toolbar-1t6TWx .search-36MZv- { order: -1 }
+.toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN { bottom: 4px; }
+.toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN .icon-3cZ1F_ { transition: all 0.2s ease }
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb {
+  width: 28px;
+  transition: all 0.2s ease-in-out;
+  background: none;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb .icon-3cZ1F_ {
+  color: var(--interactive-normal);
+  height: 23px;
+  width: 23px;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {
+  width: 200px;
+  background: var(--background-tertiary);
+  transition: all 0.2s ease-in-out;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb .icon-3cZ1F_ {
+  height: 16px;
+  width: 16px;
+  top: 4px;
+}
+
+/* better status changer by DoggyBootsy */
+/* https://github.com/discordsnippets/snippets/tree/main/better%20status%20changer */
+/* also modified, can't remember where */
+#status-picker {
+  position: absolute;
+  bottom: -56px;
+  width: 240px;
+  left: -8px;
+  background-color: var(--background-secondary-alt);
+  height: 52px;
+  border-radius: 0;
+}
+#status-picker .scroller-3BxosC {
+  display: flex;
+  justify-content: center;
+}
+#status-picker .separator-2I32lJ { display: none }
+#status-picker .item-1tOPte {
+  width: calc(100% / 4);
+  border-radius: 0;
+  transition: 250ms linear;
+}
+#status-picker .item-1tOPte .status-1fhblQ, #status-picker .item-1tOPte .description-2L932D, #status-picker .item-1tOPte .status-1fhblQ + *, #status-picker .item-1tOPte .customText-tY5LJn { display: none }
+#status-picker .item-1tOPte .icon-1IxfJ2 { transform: translate(95%, 25%) }
+#status-picker .item-1tOPte .clearStatusIcon-3-MDNF {
+  margin: 0;
+  transform: translate(-18%, 18%);
+  color: white !important;
+  transition: 250ms linear;
+}
+#status-picker .item-1tOPte .icon-1IxfJ2 .status-1AY8sU { background: white !important }
+#status-picker .item-1tOPte:hover { background: white !important }
+#status-picker .item-1tOPte#status-picker-online {
+  background: #43b581;
+  border-radius: 6px 0 0 6px;
+}
+#status-picker .item-1tOPte#status-picker-online:hover .icon-1IxfJ2 .status-1AY8sU { background: #43b581 !important }
+#status-picker .item-1tOPte#status-picker-idle { background: #faa61a }
+#status-picker .item-1tOPte#status-picker-idle:hover .icon-1IxfJ2 .status-1AY8sU { background: #faa61a !important }
+#status-picker .item-1tOPte#status-picker-dnd { background: #f04747 }
+#status-picker .item-1tOPte#status-picker-dnd:hover .icon-1IxfJ2 .status-1AY8sU { background: #f04747 !important }
+#status-picker .item-1tOPte#status-picker-invisible { background: #174075 }
+#status-picker .item-1tOPte#status-picker-invisible:hover .icon-1IxfJ2 .status-1AY8sU { background: #747f8d !important }
+#status-picker .item-1tOPte#status-picker-custom-status {
+  background-color: #5c6fb1;
+  border-radius: 0 6px 6px 0;
+}
+#status-picker .item-1tOPte#status-picker-custom-status:hover .clearStatusIcon-3-MDNF { color: #5c6fb1 !important }
+#status-picker .item-1tOPte .clearStatusIcon-3-MDNF { transform: translate(-30%, 18%) }
+.customEmojiPlaceholder-37iZ_j {
+  margin-left: 6px;
+  margin-top: 4px;
+}
+
+/* Make xenoLib notification/toasts rounded a little */
+.xenoLib-notification-content {border-radius: 4px}
+
+/* todo */
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV {
+  color: darkgrey;
+  background-color: #3a2c2c;
+}
+
+/* todo */
+.theme-dark .root-1gCeng {
+  background-color: var(--background-primary);
+  border-radius: 16px;
+}
+
+/* todo */
+.content-s2SEQO { border-radius: 0 0 16px 16px }
+
+/* Background color for upload dialog */
+.theme-dark .uploadModal-2ifh8j { background-color: var(--background-primary) }
+
+/* Background color for search dropdown */
+.theme-dark .container-3ayLPN { background-color: var(--background-primary) }
+
+/* Search dropdown selection background color */
+.theme-dark .option-96V44q.selected-rZcOL- { background-color: var(--background-secondary) }
+
+/* Remove strange gradient in search dropdown */
+.theme-dark .option-96V44q.selected-rZcOL-:after { background: inherit }
+.theme-dark .option-96V44q:after { background: inherit }
+
+/* Move username padding to the left */
+.headerInfo-30uryT { padding-left: 16px }
+
+/* Username/quick buttons widened a little */
+.container-3baos1 {padding: 0 8px 0 12px;}
+
+/* Make autocomplete listing consistent with secondary colour */
+.theme-dark .autocomplete-1vrmpx {background-color: var(--background-secondary)}
+
+/* Make search dialog consistent with theme */
+/* TODO: (is accent needed or use different var?) */
+.theme-dark .searchAnswer-3Dz2-q, .theme-dark .searchFilter-2ESiM3 {background-color: var(--background-accent)}
+
+/* Make status change dialog footer consistent with other parts of dialog*/
+.theme-dark .footer-2gL1pp {background-color: var(--background-primary)}
