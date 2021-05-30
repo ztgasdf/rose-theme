@@ -1,7 +1,7 @@
 /**
  * @name rose
  * @author seiko
- * @version 0.2.5
+ * @version 0.2.8
  * @description simple-ish rose theme for dark mode, contains snippets from doggybootsy
  * @source https://github.com/ztgasdf/rose-theme
  * @authorId 364295643784806410
@@ -9,30 +9,41 @@
 
 /* MAIN THEME VARIABLES */
 .theme-dark {
-  --header-primary: #e9ffe9;              /* Server&channel title, unread pill, unstyled text */
+  --header-primary: #DDD;              /* Server&channel title, unread pill, unstyled/no role colour text */
   --background-primary: #1C0608;          /* Main chat background. */
-  --background-secondary: #27070A;        /* todo */
-  --background-secondary-alt: #27070A;    /* todo */
-  --background-tertiary: #3C0E12;         /* todo */
-  --background-accent:#2F0A0D;            /* todo */
-  --background-floating: #1C0608;         /* todo */
-  --text-muted: #4D8530;                  /* todo */
-  --channeltextarea-background: #1C0608;  /* todo */
+  --background-secondary: #27070A;        /* Folder, channel&member list bg*/
+  --background-secondary-alt: #27070A;    /* User status&audio control bg */
+  --background-tertiary: #3C0E12;         /* Window bar, serverlist backgound */
+  --background-accent:#8F0A0A;            /* Reply line bg, TODO anything else?*/
+  --background-floating: #1C0608;         /* Text popout bubbles, (FriendNotifications bg as well) */
+  --text-link: #85CC78;                   /* self-explanatory */
+  --text-muted: #83878C;                  /* discord logo on windowtitle, Message #channel subtext */
+  --channeltextarea-background: #1C0608;  /* keep chat box same bg as primary */
   --scrollbar-thin-thumb: #2c902b;        /* Scrollbar head */
   --scrollbar-auto-thumb: #2c902b;        /* Scrollbar head */
   --scrollbar-auto-track: #31141a;        /* Scrollbar tail */
   --interactive-hover: #dc5497;           /* self-explanatory, for buttons like memberlist, inbox, etc */
-  --interactive-active: #cef9d7;          /* self-explanatory, for ^^ when active */
-  --background-mobile-primary: #1C0608;   /* todo */
+  --interactive-active: #B4D4B5;          /* Active buttons ^^, also unread channel colour*/
+  --background-mobile-primary: #1C0608;   /* Login prompt background, quite literally useless. */
 }
-/* todo */
+
+/* Make BD success toast bg darker */
+.bd-toast.toast-success { background-color: #0a5a32 }
+
+/* Friends list background */
 .peopleColumn-29fq28 { background-color: var(--background-secondary) }
+
+/* Override no role colour with white (refer to --header-primary) */
+/* Also overrides username modal color with white as well */
+.username-1A8OIy, .headerTagUsernameNoNickname-1SSLBc, .nickname-322DbL { color: white; }
 
 /* Discord rebrand colours */
 [data-popout-root].newBrand, html.newBrand {
-  --brand-experiment: #014810;         /* Bootleg blurple */
-  --brand-experiment-560: #dc5497;     /* Context menu hover colour */
+  --brand-experiment: #015810;                           /* Bootleg blurple */
+  --brand-experiment-560: var(--interactive-hover);      /* Context menu hover colour */
 }
+/* Context menu onclick background (it's rebrand's fault lol) */
+.colorDefault-2K3EoJ:active:not(.hideInteraction-1iHO1O) { background-color: #752C50 }
 
 /* Remove chatbox roundedness, redundant? */
 .scrollableContainer-2NUZem { border-radius: 0px }
@@ -46,8 +57,8 @@
   padding-right: 8px;
 }
 
-/* Hide scroll in user popout, text may clip */
-.nameTag-m8r81H .discriminator-19kRMP, .nameTag-m8r81H .username-2b1r56 {overflow: hidden}
+/* Make reply bubble same as primary bg */
+.replyBar-1YLQ2F, .threadSuggestionBar-2ufK2Z { background-color: var(--background-primary) }
 
 /* Compact search, by DoggyBootsy https://github.com/discordsnippets/snippets/tree/main/compacted%20searchbar */
 /* slightly modified, 0.6s to 0.2s, width to 200px */
@@ -132,20 +143,17 @@
 /* Make xenoLib notification/toasts rounded a little */
 .xenoLib-notification-content {border-radius: 4px}
 
-/* todo */
+/* discord buttons */
 .theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV {
   color: darkgrey;
   background-color: #3a2c2c;
 }
 
-/* todo */
+/* Make status change dialog consistent with bg, also round */
 .theme-dark .root-1gCeng {
   background-color: var(--background-primary);
   border-radius: 16px;
 }
-
-/* todo */
-.content-s2SEQO { border-radius: 0 0 16px 16px }
 
 /* Background color for upload dialog */
 .theme-dark .uploadModal-2ifh8j { background-color: var(--background-primary) }
@@ -170,7 +178,6 @@
 .theme-dark .autocomplete-1vrmpx {background-color: var(--background-secondary)}
 
 /* Make search dialog consistent with theme */
-/* TODO: (is accent needed or use different var?) */
 .theme-dark .searchAnswer-3Dz2-q, .theme-dark .searchFilter-2ESiM3 {background-color: var(--background-accent)}
 
 /* Make status change dialog footer consistent with other parts of dialog*/
