@@ -1,11 +1,14 @@
 /**
  * @name rose
  * @author seiko
- * @version 0.2.8
+ * @version 0.2.9
  * @description simple-ish rose theme for dark mode, contains snippets from doggybootsy
  * @source https://github.com/ztgasdf/rose-theme
  * @authorId 364295643784806410
 */
+
+/* TODO: Make more classes wildcards (see line 41) to handle updates
+   TODO: Find a way to fix emoji status, as it makes the status X button offcenter */
 
 /* MAIN THEME VARIABLES */
 .theme-dark {
@@ -17,7 +20,7 @@
   --background-accent:#8F0A0A;            /* Reply line bg, TODO anything else?*/
   --background-floating: #1C0608;         /* Text popout bubbles, (FriendNotifications bg as well) */
   --text-link: #85CC78;                   /* self-explanatory */
-  --text-muted: #83878C;                  /* discord logo on windowtitle, Message #channel subtext */
+  --text-muted: #83878C;                  /* discord logo on windowtitle, Message #channel subtext, msg date */
   --channeltextarea-background: #1C0608;  /* keep chat box same bg as primary */
   --scrollbar-thin-thumb: #2c902b;        /* Scrollbar head */
   --scrollbar-auto-thumb: #2c902b;        /* Scrollbar head */
@@ -25,6 +28,7 @@
   --interactive-hover: #dc5497;           /* self-explanatory, for buttons like memberlist, inbox, etc */
   --interactive-active: #B4D4B5;          /* Active buttons ^^, also unread channel colour*/
   --background-mobile-primary: #1C0608;   /* Login prompt background, quite literally useless. */
+  --deprecated-quickswitcher-input-background: #3C0E12; /* quickswitcher input background */
 }
 
 /* Make BD success toast bg darker */
@@ -35,7 +39,7 @@
 
 /* Override no role colour with white (refer to --header-primary) */
 /* Also overrides username modal color with white as well */
-.username-1A8OIy, .headerTagUsernameNoNickname-1SSLBc, .nickname-322DbL { color: white; }
+.username-1A8OIy, [class*=".headerTagUsernameNoNickname"], .nickname-322DbL { color: white; }
 
 /* Discord rebrand colours */
 [data-popout-root].newBrand, html.newBrand {
@@ -148,6 +152,18 @@
   color: darkgrey;
   background-color: #3a2c2c;
 }
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:active {
+  color: black;
+  background-color: lightgrey
+}
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:hover {
+  color: black;
+  background-color: var(--interactive-hover)
+}
+.theme-dark .lookFilled-1Gx00P.colorGrey-2DXtkV:hover:disabled {
+  color: dimgrey;
+  background-color: #3a2c2c
+}
 
 /* Make status change dialog consistent with bg, also round */
 .theme-dark .root-1gCeng {
@@ -157,6 +173,7 @@
 
 /* Background color for upload dialog */
 .theme-dark .uploadModal-2ifh8j { background-color: var(--background-primary) }
+.theme-dark .footer-3mqk7D { background-color: var(--background-primary); }
 
 /* Background color for search dropdown */
 .theme-dark .container-3ayLPN { background-color: var(--background-primary) }
