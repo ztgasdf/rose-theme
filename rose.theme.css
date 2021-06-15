@@ -1,13 +1,13 @@
 /**
  * @name rose
  * @author seiko
- * @version 0.2.9
+ * @version 0.3.2
  * @description simple-ish rose theme for dark mode, contains snippets from doggybootsy
  * @source https://github.com/ztgasdf/rose-theme
  * @authorId 364295643784806410
 */
 
-/* TODO: Make more classes wildcards (see line 41) to handle updates
+/* TODO: Make more classes wildcards (see line 48) to handle updates
    TODO: Find a way to fix emoji status, as it makes the status X button offcenter */
 
 /* MAIN THEME VARIABLES */
@@ -31,6 +31,12 @@
   --deprecated-quickswitcher-input-background: #3C0E12; /* quickswitcher input background */
 }
 
+/* BetterDiscord PlatformIndicators moving */
+.PI-indicatorContainer {margin-top: 1px}
+
+/* Make delete message background consistent */
+.theme-dark .message-2qRu38 { background-color: var(--background-secondary) }
+
 /* Make BD success toast bg darker */
 .bd-toast.toast-success { background-color: #0a5a32 }
 
@@ -39,7 +45,7 @@
 
 /* Override no role colour with white (refer to --header-primary) */
 /* Also overrides username modal color with white as well */
-.username-1A8OIy, [class*=".headerTagUsernameNoNickname"], .nickname-322DbL { color: white; }
+.username-1A8OIy, [class*="headerTagUsernameNoNickname"], .nickname-322DbL { color: white; }
 
 /* Discord rebrand colours */
 [data-popout-root].newBrand, html.newBrand {
@@ -175,6 +181,10 @@
 .theme-dark .uploadModal-2ifh8j { background-color: var(--background-primary) }
 .theme-dark .footer-3mqk7D { background-color: var(--background-primary); }
 
+
+/* "Search for" background */
+.theme-dark .focused-2bY0OD { background-color: var(--background-secondary) }
+
 /* Background color for search dropdown */
 .theme-dark .container-3ayLPN { background-color: var(--background-primary) }
 
@@ -196,6 +206,7 @@
 
 /* Make search dialog consistent with theme */
 .theme-dark .searchAnswer-3Dz2-q, .theme-dark .searchFilter-2ESiM3 {background-color: var(--background-accent)}
+.theme-dark .dim-1l4L4y span { background-color: var(--background-tertiary) }
 
 /* Make status change dialog footer consistent with other parts of dialog*/
 .theme-dark .footer-2gL1pp {background-color: var(--background-primary)}
